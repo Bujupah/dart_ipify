@@ -28,7 +28,7 @@ class Ipify {
         throw Exception('Received an invalid status code from ipify: ${response.statusCode}. The service might be experiencing issues.');
       }
 
-      final data = await utf8.decoder.bind(response).first;
+      final data = await utf8.decoder.convert(await response.first);
       return data;
 
     } catch (e) {
