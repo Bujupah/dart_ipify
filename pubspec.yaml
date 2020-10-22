@@ -1,6 +1,6 @@
 name: dart_ipify
 description: This package uses the remote IPify web service in order to get the public IP address.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Bujupah/dart_ipify
 
 environment:
