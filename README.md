@@ -15,7 +15,7 @@ This library makes getting your public IP address from dart languages extremely 
 ## Installation
 ```yaml
 dependencies:
-  dart_ipify: ^1.0.0
+  dart_ipify: ^1.0.1
 ```
 
 ## Usage
@@ -40,6 +40,10 @@ void main() async {
 ## Change Log
 All library changes, in descending order.
 
-#### Version 1.0.0
-**Release Oct 22, 2020**
+#### Version 1.0.1 (Release Oct 22, 2020)
+- Supporting multiple platforms.
+- Documenting code.
+- Adding example.
+
+#### Version 1.0.0 (Release Oct 22, 2020)
 - First release
