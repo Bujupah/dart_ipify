@@ -1,6 +1,9 @@
 # Dart Ipify
 **An unofficial client library for Ipify [*`<https://www.ipify.org/>`*](https://www.ipify.org/) *A Simple Public IP Address API*.**
 
+## About ipify
+Using ipify is ridiculously simple. You have three options. You can get your public IP directly (in plain text), you can get your public IP in JSON format, or you can get your public IP information in JSONP format (useful for Javascript developers).
+
 ## Meta
 - Author: Khalil Mejdi
 - Email: [khalil.mejdi](mailto:khalil.mejdi97@gmail.com)
