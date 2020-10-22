@@ -4,5 +4,3 @@
 library dart_ipify;
 
 export 'src/dart_ipify_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
