@@ -1,3 +1,7 @@
+## 1.0.2
+- Adding GeoLocation API.
+- Adding example.
+
 ## 1.0.1
 - Supporting multiple platforms.
 - Documenting code.
