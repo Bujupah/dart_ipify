@@ -4,6 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Bujupah/dart_ipify/blob/master/LICENSE)
 [![pub package](https://img.shields.io/pub/v/dart_ipify.svg)](https://pub.dartlang.org/packages/dart_ipify) 
 [![Opensource](https://img.shields.io/static/v1?label=opensource&message=❤&color=red)](https://github.com/bujupah/dart_ipify)
+[![Workflow](https://github.com/bujupah/dart_ipify/actions/workflows/dart.yml/badge.svg)](https://github.com/Bujupah/dart_ipify/actions)
 
 ## About ipify
 Using ipify is ridiculously simple. You can get your public IP directly or you can get the precise physical location of a given IP address. so if you only have as much as an IP address, you can still find out its geographical details.
