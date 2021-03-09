@@ -1,3 +1,6 @@
+## 1.1.0
+- Migrating to null-safety.
+
 ## 1.0.2
 - Adding GeoLocation API.
 - Adding example.

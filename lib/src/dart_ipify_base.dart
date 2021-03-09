@@ -49,7 +49,8 @@ class Ipify {
   /// print(jsonpText); // callback({"ip":"98.207.254.136"});
   /// ```
   static Future<String> ipv4({Format format = Format.TEXT}) async {
-    final uri = Uri(host: _hostv4, path: _path, scheme: _scheme, query: _param(format));
+    final uri =
+        Uri(host: _hostv4, path: _path, scheme: _scheme, query: _param(format));
     return await _send(uri);
   }
 
@@ -68,21 +69,22 @@ class Ipify {
   /// print(jsonpText); // callback({"ip":"98.207.254.136"}); or callback({"ip":"2a00:1450:400f:80d::200e"});
   /// ```
   static Future<String> ipv64({Format format = Format.TEXT}) async {
-    final uri = Uri(host: _hostv64, path: _path, scheme: _scheme, query: _param(format));
+    final uri = Uri(
+        host: _hostv64, path: _path, scheme: _scheme, query: _param(format));
     return await _send(uri);
   }
 
   /// Discover the precise physical location of a given IP address,
   /// the default geo search is from this device current Public IP address.
-  /// 
+  ///
   /// Returns a result of type GeoModel which is a generated class.
-  /// 
+  ///
   /// This require an apiKey from https://geo.ipify.org/
-  /// 
+  ///
   /// Usage:
   /// ```dart
   /// final mygeo = Ipify.geo('apiKey');
-  /// print(mygeo.location.country); // TN 
+  /// print(mygeo.location.country); // TN
   ///
   /// final somegeo = Ipify.geo('apiKey', ip: '8.8.8.8');
   /// print(somegeo.toJson());
@@ -122,30 +124,31 @@ class Ipify {
   ///   }
   /// }
   /// ```
-  static Future<GeoModel> geo(String api, { String ip }) async {
+  static Future<GeoModel> geo(String api, {String? ip}) async {
     ip ??= await ipv4();
     final query = 'apiKey=$api&ipAddress=$ip';
-    final uri = Uri(host: _geoHost, path: _geoPath, scheme: _scheme, query: query);
+    final uri =
+        Uri(host: _geoHost, path: _geoPath, scheme: _scheme, query: query);
     final response = await _send(uri);
     return GeoModel.fromJson(response);
   }
 
   /// Get your API current balance
-  /// 
-  /// Example: 
+  ///
+  /// Example:
   /// ```json
   /// { "credits": 984 }
   /// ```
   static Future<dynamic> balance(String api) async {
     final query = 'apiKey=$api';
-    final uri = Uri(host: _geoHost, path: _geobalancePath, scheme: _scheme, query: query);
+    final uri = Uri(
+        host: _geoHost, path: _geobalancePath, scheme: _scheme, query: query);
     return await _send(uri);
   }
 
   static Future<String> _send(Uri uri) async {
     try {
-      
-      final response = await http.get(uri.toString());
+      final response = await http.get(uri);
 
       if (response.statusCode != 200) {
         throw Exception(

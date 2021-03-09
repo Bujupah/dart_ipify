@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 class GeoModel {
-  final String ip;
-  final Location location;
-  final List<String> domains;
-  final As as;
-  final String isp;
-  final Proxy proxy;
+  final String? ip;
+  final Location? location;
+  final List<String>? domains;
+  final As? as;
+  final String? isp;
+  final Proxy? proxy;
   GeoModel({
     this.ip,
     this.location,
@@ -17,12 +17,12 @@ class GeoModel {
   });
 
   GeoModel copyWith({
-    String ip,
-    Location location,
-    List<String> domains,
-    As as,
-    String isp,
-    Proxy proxy,
+    String? ip,
+    Location? location,
+    List<String>? domains,
+    As? as,
+    String? isp,
+    Proxy? proxy,
   }) {
     return GeoModel(
       ip: ip ?? this.ip,
@@ -45,11 +45,9 @@ class GeoModel {
     };
   }
 
-  factory GeoModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
+  factory GeoModel.fromMap(Map<String, dynamic>? map) {
     return GeoModel(
-      ip: map['ip'],
+      ip: map!['ip'],
       location: Location.fromMap(map['location']),
       domains: List<String>.from(map['domains']),
       as: As.fromMap(map['as']),
@@ -60,7 +58,8 @@ class GeoModel {
 
   String toJson() => json.encode(toMap());
 
-  factory GeoModel.fromJson(String source) => GeoModel.fromMap(json.decode(source));
+  factory GeoModel.fromJson(String source) =>
+      GeoModel.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -71,34 +70,34 @@ class GeoModel {
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
     return o is GeoModel &&
-      o.ip == ip &&
-      o.location == location &&
-      o.domains == domains &&
-      o.as == as &&
-      o.isp == isp &&
-      o.proxy == proxy;
+        o.ip == ip &&
+        o.location == location &&
+        o.domains == domains &&
+        o.as == as &&
+        o.isp == isp &&
+        o.proxy == proxy;
   }
 
   @override
   int get hashCode {
     return ip.hashCode ^
-      location.hashCode ^
-      domains.hashCode ^
-      as.hashCode ^
-      isp.hashCode ^
-      proxy.hashCode;
+        location.hashCode ^
+        domains.hashCode ^
+        as.hashCode ^
+        isp.hashCode ^
+        proxy.hashCode;
   }
 }
 
 class Location {
-  final String country;
-  final String region;
-  final String city;
-  final double lat;
-  final double lng;
-  final String postalCode;
-  final String timezone;
-  final int geonameId;
+  final String? country;
+  final String? region;
+  final String? city;
+  final double? lat;
+  final double? lng;
+  final String? postalCode;
+  final String? timezone;
+  final int? geonameId;
   Location({
     this.country,
     this.region,
@@ -111,14 +110,14 @@ class Location {
   });
 
   Location copyWith({
-    String country,
-    String region,
-    String city,
-    double lat,
-    double lng,
-    String postalCode,
-    String timezone,
-    int geonameId,
+    String? country,
+    String? region,
+    String? city,
+    double? lat,
+    double? lng,
+    String? postalCode,
+    String? timezone,
+    int? geonameId,
   }) {
     return Location(
       country: country ?? this.country,
@@ -145,11 +144,9 @@ class Location {
     };
   }
 
-  factory Location.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
+  factory Location.fromMap(Map<String, dynamic>? map) {
     return Location(
-      country: map['country'],
+      country: map!['country'],
       region: map['region'],
       city: map['city'],
       lat: map['lat']?.toDouble(),
@@ -162,7 +159,8 @@ class Location {
 
   String toJson() => json.encode(toMap());
 
-  factory Location.fromJson(String source) => Location.fromMap(json.decode(source));
+  factory Location.fromJson(String source) =>
+      Location.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -172,37 +170,37 @@ class Location {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-  
+
     return o is Location &&
-      o.country == country &&
-      o.region == region &&
-      o.city == city &&
-      o.lat == lat &&
-      o.lng == lng &&
-      o.postalCode == postalCode &&
-      o.timezone == timezone &&
-      o.geonameId == geonameId;
+        o.country == country &&
+        o.region == region &&
+        o.city == city &&
+        o.lat == lat &&
+        o.lng == lng &&
+        o.postalCode == postalCode &&
+        o.timezone == timezone &&
+        o.geonameId == geonameId;
   }
 
   @override
   int get hashCode {
     return country.hashCode ^
-      region.hashCode ^
-      city.hashCode ^
-      lat.hashCode ^
-      lng.hashCode ^
-      postalCode.hashCode ^
-      timezone.hashCode ^
-      geonameId.hashCode;
+        region.hashCode ^
+        city.hashCode ^
+        lat.hashCode ^
+        lng.hashCode ^
+        postalCode.hashCode ^
+        timezone.hashCode ^
+        geonameId.hashCode;
   }
 }
 
 class As {
-  final int asn;
-  final String name;
-  final String route;
-  final String domain;
-  final String type;
+  final int? asn;
+  final String? name;
+  final String? route;
+  final String? domain;
+  final String? type;
   As({
     this.asn,
     this.name,
@@ -212,11 +210,11 @@ class As {
   });
 
   As copyWith({
-    int asn,
-    String name,
-    String route,
-    String domain,
-    String type,
+    int? asn,
+    String? name,
+    String? route,
+    String? domain,
+    String? type,
   }) {
     return As(
       asn: asn ?? this.asn,
@@ -237,11 +235,9 @@ class As {
     };
   }
 
-  factory As.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
+  factory As.fromMap(Map<String, dynamic>? map) {
     return As(
-      asn: map['asn']?.toInt(),
+      asn: map!['asn']?.toInt(),
       name: map['name'],
       route: map['route'],
       domain: map['domain'],
@@ -261,29 +257,29 @@ class As {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-  
+
     return o is As &&
-      o.asn == asn &&
-      o.name == name &&
-      o.route == route &&
-      o.domain == domain &&
-      o.type == type;
+        o.asn == asn &&
+        o.name == name &&
+        o.route == route &&
+        o.domain == domain &&
+        o.type == type;
   }
 
   @override
   int get hashCode {
     return asn.hashCode ^
-      name.hashCode ^
-      route.hashCode ^
-      domain.hashCode ^
-      type.hashCode;
+        name.hashCode ^
+        route.hashCode ^
+        domain.hashCode ^
+        type.hashCode;
   }
 }
 
 class Proxy {
-  final bool proxy;
-  final bool vpn;
-  final bool tor;
+  final bool? proxy;
+  final bool? vpn;
+  final bool? tor;
   Proxy({
     this.proxy,
     this.vpn,
@@ -291,9 +287,9 @@ class Proxy {
   });
 
   Proxy copyWith({
-    bool proxy,
-    bool vpn,
-    bool tor,
+    bool? proxy,
+    bool? vpn,
+    bool? tor,
   }) {
     return Proxy(
       proxy: proxy ?? this.proxy,
@@ -310,11 +306,9 @@ class Proxy {
     };
   }
 
-  factory Proxy.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
+  factory Proxy.fromMap(Map<String, dynamic>? map) {
     return Proxy(
-      proxy: map['proxy'],
+      proxy: map!['proxy'],
       vpn: map['vpn'],
       tor: map['tor'],
     );
@@ -330,11 +324,8 @@ class Proxy {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-  
-    return o is Proxy &&
-      o.proxy == proxy &&
-      o.vpn == vpn &&
-      o.tor == tor;
+
+    return o is Proxy && o.proxy == proxy && o.vpn == vpn && o.tor == tor;
   }
 
   @override

@@ -65,6 +65,9 @@ void main() async {
 ## Change Log
 All library changes, in descending order.
 
+#### Version 1.1.0 (Release Mars 09, 2021)
+- Migrating to null-safety.
+
 #### Version 1.0.2 (Release Oct 28, 2020)
 - Adding GeoLocation API.
 - Adding example.
