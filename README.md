@@ -19,7 +19,7 @@ This library makes getting your ``public IP address`` or the precise ``geographi
 ## Installation
 ```yaml
 dependencies:
-  dart_ipify: ^1.0.2
+  dart_ipify: ^1.1.0
 ```
 
 ## Usage
