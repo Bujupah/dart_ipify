@@ -1,7 +1,7 @@
 import 'package:dart_ipify/src/model/geo.dart';
 import 'package:http/http.dart' as http;
 
-/// This deternmines the response type format from the ipify service (http://www.ipify.org).
+/// This determines the response type format from the ipify service (http://www.ipify.org).
 /// There are three types.
 ///
 /// [Format.TEXT] simple text (default),

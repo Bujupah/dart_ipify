@@ -7,6 +7,7 @@ class GeoModel {
   final As? as;
   final String? isp;
   final Proxy? proxy;
+
   GeoModel({
     this.ip,
     this.location,
@@ -49,7 +50,9 @@ class GeoModel {
     return GeoModel(
       ip: map!['ip'],
       location: Location.fromMap(map['location']),
-      domains: List<String>.from(map['domains']),
+      domains: map.containsKey('domains')
+          ? List<String>.from(map['domains'])
+          : List<String>.empty(),
       as: As.fromMap(map['as']),
       isp: map['isp'],
       proxy: Proxy.fromMap(map['proxy']),
@@ -98,6 +101,7 @@ class Location {
   final String? postalCode;
   final String? timezone;
   final int? geonameId;
+
   Location({
     this.country,
     this.region,
@@ -201,6 +205,7 @@ class As {
   final String? route;
   final String? domain;
   final String? type;
+
   As({
     this.asn,
     this.name,
@@ -280,6 +285,7 @@ class Proxy {
   final bool? proxy;
   final bool? vpn;
   final bool? tor;
+
   Proxy({
     this.proxy,
     this.vpn,
