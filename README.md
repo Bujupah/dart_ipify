@@ -20,7 +20,7 @@ This library makes getting your ``public IP address`` or the precise ``geographi
 ## Installation
 ```yaml
 dependencies:
-  dart_ipify: ^1.1.0
+  dart_ipify: ^1.1.1
 ```
 
 ## Usage
@@ -66,17 +66,21 @@ void main() async {
 ## Change Log
 All library changes, in descending order.
 
-#### Version 1.1.0 (Release Mars 09, 2021)
+## 1.1.1
+- Handles no domain responses [#3](https://github.com/Bujupah/dart_ipify/pull/3), [Baneeishaque](https://github.com/Baneeishaque)
+- GitHub actions [#4](https://github.com/Bujupah/dart_ipify/pull/3), [Bujupah](https://github.com/Bujupah)
+
+## 1.1.0
 - Migrating to null-safety.
 
-#### Version 1.0.2 (Release Oct 28, 2020)
+## 1.0.2
 - Adding GeoLocation API.
 - Adding example.
 
-#### Version 1.0.1 (Release Oct 22, 2020)
+## 1.0.1
 - Supporting multiple platforms.
 - Documenting code.
 - Adding example.
 
-#### Version 1.0.0 (Release Oct 22, 2020)
-- First release
+## 1.0.0
+- First release.

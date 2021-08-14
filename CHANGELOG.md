@@ -1,3 +1,7 @@
+## 1.1.1
+- Handles no domain responses [#3](https://github.com/Bujupah/dart_ipify/pull/3), [Baneeishaque](https://github.com/Baneeishaque)
+- GitHub actions [#4](https://github.com/Bujupah/dart_ipify/pull/3), [Bujupah](https://github.com/Bujupah)
+
 ## 1.1.0
 - Migrating to null-safety.
 
