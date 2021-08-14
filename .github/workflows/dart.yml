@@ -41,6 +41,3 @@ jobs:
         env: 
           IPIFY_API_KEY: ${{ secrets.IPIFY_API_KEY }}
         run: dart test
-        
-      - name: Run tests
-        run: dart test
