@@ -40,7 +40,7 @@ jobs:
       - name: Get all env variables
         env: 
           IPIFY_API_KEY: ${{ secrets.IPIFY_API_KEY }}
-        run: env
+        run: echo ${{ IPIFY_API_KEY }}
         
 #       - name: Run tests
 #         run: dart test
