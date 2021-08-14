@@ -1,17 +1,22 @@
 import 'package:dart_ipify/dart_ipify.dart';
+import 'package:dotenv/dotenv.dart' show load, env;
 
 // Example
 void main() async {
+  load();
+  var ipifyApiKeyName = 'IPIFY_API_KEY';
+  var IPIFY_API_KEY =
+      env.containsKey(ipifyApiKeyName) ? env[ipifyApiKeyName] : '';
+
   final ip = await Ipify.ipv64(format: Format.JSON);
   print(ip);
 
-  final mygeo = await Ipify.geo('at_apiKeyxxxxxxxxxxxxxxxxxxxxxxx');
-  print(mygeo.location);
+  final myGeo = await Ipify.geo(IPIFY_API_KEY.toString());
+  print(myGeo.location);
 
-  final somegeo =
-      await Ipify.geo('at_apiKeyxxxxxxxxxxxxxxxxxxxxxxx', ip: '8.8.8.8');
-  print(somegeo);
+  final someGeo = await Ipify.geo(IPIFY_API_KEY.toString(), ip: '8.8.8.8');
+  print(someGeo);
 
-  final balance = await Ipify.balance('at_apiKeyxxxxxxxxxxxxxxxxxxxxxxx');
+  final balance = await Ipify.balance(IPIFY_API_KEY.toString());
   print(balance);
 }
